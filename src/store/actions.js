@@ -3,8 +3,8 @@
       触发对应mutations模块的方法
  */
 
-import {REECIVE_DATA,RECEIVE_BANNER,RECEIVE_HOME,RECEIVE_FENLEI} from './mutations-type'
-import {reqData,reqBanner,reqHome,reqFenlei} from '../api'
+import {REECIVE_DATA,RECEIVE_BANNER,RECEIVE_HOME,RECEIVE_FENLEI,RECEIVE_SHIWU} from './mutations-type'
+import {reqData,reqBanner,reqHome,reqFenlei,reqShiwu} from '../api'
 
 export default {
   /**
@@ -32,20 +32,36 @@ export default {
   /**
    * 获取home_data的数据
    */
-  async getHomeData ({commit}){
+  async getHomeData ({commit},cb){
     const result = await reqHome()
     console.log('哈哈哈哈哈哈哈哈哈---哈哈')
     console.log(result)
     if(result.code===0){
       commit(RECEIVE_HOME,{home:result})
+      typeof cb === 'function' && cb()
     }
   },
   /**
    * 获取分类数据
    */
-  async getFenlei ({commit}){
+  async getFenlei ({commit},cb){
     const result  = await reqFenlei()
-    console.log('我是分类')
+    console.log('我是分类'+result)
+    if(result.code===0){
+      commit(RECEIVE_FENLEI,{fenlei:result})
+      typeof cb === 'function' && cb()
+    }
+  },
+  /**
+   * 获取识物数据
+   */
+  async getShiweu({commit},cb){
+    const result = await reqShiwu()
+    console.log('我是识物'+result)
+    if(result.code === 0){
+      commit(RECEIVE_SHIWU,{shiwu:result})
+      typeof cb === 'function' && cb()
+    }
   }
 }
 

@@ -157,6 +157,7 @@
       }
     },
     mounted(){
+
       this.$store.dispatch('getData',()=>{
         this.$nextTick(() => {  // 列表数据更新显示后执行滑动
           this._initScroll()

@@ -13,3 +13,6 @@ export const reqHome = () => ajax('/home')
 //获取分类数据
 export const reqFenlei = () => ajax('/fenlei')
 
+//获取识物
+export const reqShiwu = () => ajax('/shiwu')
+

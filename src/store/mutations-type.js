@@ -10,3 +10,5 @@ export const RECEIVE_HOME = 'receive_home' //接收home数据
 
 export const RECEIVE_FENLEI = 'receive_fenlei' //接受分类数据
 
+export const RECEIVE_SHIWU = 'receive_shiwu' //识物数据
+

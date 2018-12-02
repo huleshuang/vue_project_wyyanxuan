@@ -1,61 +1,63 @@
 <template>
-  <section class="loginContainer">
-    <div class="loginInner">
-      <div class="login_header">
-        <h2 class="login_logo">网易登录</h2>
-        <div class="login_header_title">
-          <a href="javascript:;">短信登录</a>
-          <a href="javascript:;">密码登录</a>
-        </div>
-      </div>
-      <div class="login_content">
-        <form>
-          <div>
-            <section class="login_message">
-              <input type="tel" maxlength="11" placeholder="手机号">
-              <button>获取验证码</button>
-            </section>
-            <section class="login_verification">
-              <input type="tel" maxlength="8" placeholder="验证码">
-            </section>
-            <section class="login_hint">
-              温馨提示：未注册网易帐号的手机号，登录时将自动注册，且代表已同意
-              <a href="javascript:;">《网易服务协议》</a>
-            </section>
-          </div>
-
-          <!--账号密码登录-->
-          <div>
-            <section>
-              <section class="login_message">
-                <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名">
-              </section>
-              <section class="login_verification">
-                <input maxlength="8" placeholder="密码">
-                <div class="switch_button">
-                  <div class="switch_circle"></div>
-                  <span class="switch_text"></span>
-                </div>
-              </section>
-              <section class="login_message">
-                <input type="text" maxlength="11" placeholder="验证码">
-                <img class="get_verification" alt="captcha">
-              </section>
-            </section>
-          </div>
-          <button class="login_submit">登录</button>
-        </form>
-        <a href="javascript:;" class="about_us">关于我们</a>
-      </div>
-      <a href="javascript:" class="go_back">
-        <i class="iconfont icon-jiantou2"></i>
-      </a>
+  <div class="div_container">
+    <div class="headerLogo">
+      <i class="iconfont icon-home" @click="$router.replace('/homepage')"></i>
+      <span class="wangyi">网易严选</span>
+      <i class="iconfont icon-sousuo1"></i>
+      <i class="iconfont icon-gouwuche1"></i>
     </div>
-  </section>
+
+    <div class="img_div">
+      <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png"/>
+    </div>
+
+    <button class="login_phone" @click="$router.replace('/phoneLogin')">
+      <i class="iconfont icon-shouji1"></i>
+      <span>手机号码登录</span>
+    </button>
+
+    <button class="login_email" @click="$router.replace('/emailLogin')">
+      <i class="iconfont icon-youxiang"></i>
+      <span>邮箱账号登录</span>
+    </button>
+
+    <div class="no_register">
+      <a href="javascript:;">手机号快捷注册</a>
+      <i class="iconfont icon-jiantouyou"></i>
+    </div>
+
+    <div class="footer">
+      <div class="weixin">
+        <span>
+          <i class="iconfont icon-weixin"></i>
+          <span>微信</span>
+        </span>
+      </div>
+
+      <span class="one">|</span>
+
+      <div class="qq">
+        <span>
+          <i class="iconfont icon-qq"></i>
+          <span>QQ</span>
+        </span>
+      </div>
+
+      <span class="two">|</span>
+
+      <div class="weibo">
+        <span>
+          <i class="iconfont icon-weobo"></i>
+          <span>微博</span>
+        </span>
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <script>
-
+  import loginTopHeader from '../../components/loginTopHeader/loginTopHeader'
   export default {
     data() {
       return {
@@ -63,147 +65,85 @@
       }
     },
 
-
+    components:{
+      loginTopHeader
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus/mixins.styl"
-  .loginContainer
+  .div_container
+    background #f3f5f7
     width 100%
     height 100%
-    background #fff
-    .loginInner
-      padding-top 60px
-      width 80%
-      margin 0 auto
-      .login_header
-        .login_logo
-          font-size 40px
-          font-weight bold
-          color #02a774
-          text-align center
-        .login_header_title
-          padding-top 40px
-          text-align center
-          >a
-            color #333
-            font-size 14px
-            padding-bottom 4px
-            &:first-child
-              margin-right 40px
-            &.on
-              color #02a774
-              font-weight 700
-              border-bottom 2px solid #02a774
-      .login_content
-        >form
-          >div
-            display none
-            &.on
-              display block
-            input
-              width 100%
-              height 100%
-              padding-left 10px
-              box-sizing border-box
-              border 1px solid #ddd
-              border-radius 4px
-              outline 0
-              font 400 14px Arial
-              background gray
-              &:focus
-                border 1px solid #02a774
-            .login_message
-              position relative
-              margin-top 16px
-              height 48px
-              font-size 14px
-              background #fff
-              .get_verification
-                position absolute
-                top 50%
-                right 10px
-                transform translateY(-50%)
-                border 0
-                color #ccc
-                font-size 14px
-                background transparent
-                &.right_phone_number
-                  color: black
-            .login_verification
-              position relative
-              margin-top 16px
-              height 48px
-              font-size 14px
-              background #fff
-              .switch_button
-                font-size 12px
-                border 1px solid #ddd
-                border-radius 8px
-                transition background-color .3s,border-color .3s
-                padding 0 6px
-                width 30px
-                height 16px
-                line-height 16px
-                color #fff
-                position absolute
-                top 50%
-                right 10px
-                transform translateY(-50%)
-                &.off
-                  background #fff
-                  .switch_text
-                    float right
-                    color #ddd
-                &.on
-                  background #02a774
-                >.switch_circle
-                  //transform translateX(27px)
-                  position absolute
-                  top -1px
-                  left -1px
-                  width 16px
-                  height 16px
-                  border 1px solid #ddd
-                  border-radius 50%
-                  background #fff
-                  box-shadow 0 2px 4px 0 rgba(0,0,0,.1)
-                  transition transform .3s
-                  &.right
-                    transform translateX(27px)
-            .login_hint
-              margin-top 12px
-              color #999
-              font-size 14px
-              line-height 20px
-              >a
-                color #02a774
-          .login_submit
-            display block
-            width 100%
-            height 42px
-            margin-top 30px
-            border-radius 4px
-            background #4cd96f
-            color #fff
-            text-align center
-            font-size 16px
-            line-height 42px
-            border 0
-        .about_us
-          display block
-          font-size 12px
-          margin-top 20px
-          text-align center
-          color #999
-      .go_back
+    position relative
+    .headerLogo
+      background #fff
+      height 100px
+      .icon-home
+        font-size 50px
+        margin-left 30px
+        color #999
+        line-height 100px
+      .wangyi
+        font-size 50px
+        color #999
+        margin-left 180px
+      .icon-sousuo1
+        margin-left 110px
+        font-size 50px
+      .icon-gouwuche1
+        margin-left 20px
+        font-size 50px
+    .img_div
+      width 300px
+      height 100px
+      img
+        width 100%
+        height 100%
+        margin 200px 250px
+    .login_phone
+        display block
+        width 90%
+        height 90px
+        margin 400px auto
+        border-radius 4px
+        color white
+        background  #b4282d
+        text-align center
+        font-size 36px
+        line-height 42px
+        border 1px solid #b4282d
+        .icon-shouji1
+          font-size 50px
+    .login_email
+       display block
+       width 90%
+       height 90px
+       margin -360px auto
+       border-radius 4px
+       color #b4282d
+       text-align center
+       font-size 36px
+       line-height 42px
+       background #f3f5f7
+       border 1px solid #b4282d
+       .icon-youxiang
+         font-size 40px
+    .no_register
+      position: absolute
+      bottom 450px
+      left 280px
+    .footer
         position absolute
-        top 5px
-        left 5px
-        width 30px
-        height 30px
-        >.iconfont
-          font-size 20px
-          color #999
+        bottom 50px
+        display flex
+        margin-left 20%
+        color #999
+        .qq
+          padding 0 10px
+        .one,.two
+          padding 0 30px
+
 </style>

@@ -4,49 +4,149 @@
       <input type="text" class="inputText" placeholder="搜索商品, 共19702款好物"/>
       <i class="iconfont icon-sousuo"></i>
     </div>
-
     <div class="goods">
       <div class="menu-wrapper">
-        <ul ref="leftUl">
+        <ul class="ulli">
           <!--current-->
-          <li class="menu-item" v-for="(good, index) in goods"
-              :key="index" :class="{current: index===currentIndex}" @click="clickItem(index)">
-            <span class="text bottom-border-1px">
-              <img class="icon" v-if="good.icon" :src="good.icon">
-              {{good.name}}
-            </span>
+          <li class="menu-item" v-for="(item, index) in fenlei.fenlei.categoryL1List"
+              :key="index">
+            <a class="text bottom-border-1px">
+              {{item.name}}
+            </a>
           </li>
         </ul>
       </div>
-      <div class="foods-wrapper">
-        <ul ref="RightUl">
-          <li class="food-list-hook" v-for="(good, index) in goods" :key="index" @click="clickItem(index)">
-            <h1 class="title">{{good.name}}</h1>
-            <ul>
-              <li class="food-item bottom-border-1px" v-for="(food, index) in good.foods" :key="index">
-                <div class="icon" @click="showFood(food)">
-                  <img width="57" height="57" :src="food.icon">
-                </div>
-                <div class="content">
-                  <h2 class="name">{{food.name}}</h2>
-                  <p class="desc">{{food.description}}</p>
-                  <div class="extra">
-                    <span class="count">月售{{food.sellCount}}份</span>
-                    <span>好评率{{food.rating}}%</span></div>
-                  <div class="price">
-                    <span class="now">￥{{food.price}}</span>
-                    <span class="old" v-if="food.oldPrice">￥{{food.oldPrice}}</span>
-                  </div>
-                  <div class="cartcontrol-wrapper">
-                    <CartControl :food="food"/>
-                  </div>
-                </div>
-              </li>
-            </ul>
+
+      <div class="rightList">
+
+        <div class="shengdian">
+          <img src="http://yanxuan.nosdn.127.net/52855d9a0c1f738f26ac125913af0012.jpg?imageView&thumbnail=0x196&quality=75"/>
+        </div>
+
+        <ul class="right_ul_lis">
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>三石福利价</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/85b82491e38a8283ef1d18638a70b3ae.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>严选明星价</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/6078ca70600b25662a5576236f31fdf6.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>开天辟地价</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/876516511abb6a40dcb47579944779b9.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>囤货装特惠</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/4416fb0c98002650fdd860713d1fbdbc.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>服装特惠</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/9787be8360d5156af0f47727d449a177.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>鞋包配饰特惠</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/aefcd5a3e629615e499b50b570b3e525.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>爆款美食直降</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/cdb06a5af79a63fae97baee4ec2ded0c.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>精款美食</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/764a01617ef6dec680ac3dcaf34ebb81.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>大家都在搜</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/25294c2cf0bc082576b8bbf3e0282204.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>百分百好评</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/d365f7e40358cabd2968cb467df5e1fd.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>百元暖冬好物</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/65ea6437731840ba697a33b543b8c9cd.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>懒人专属定制</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/c27680e52838f793fcc5ff941cb3907a.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>防霾必备神奇</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/85b82491e38a8283ef1d18638a70b3ae.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>严选明星价</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/6078ca70600b25662a5576236f31fdf6.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>开天辟地价</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/876516511abb6a40dcb47579944779b9.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>囤货装特惠</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/4416fb0c98002650fdd860713d1fbdbc.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>服装特惠</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/9787be8360d5156af0f47727d449a177.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>鞋包配饰特惠</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/876516511abb6a40dcb47579944779b9.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>囤货装特惠</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="http://yanxuan.nosdn.127.net/4416fb0c98002650fdd860713d1fbdbc.png?imageView&quality=85&thumbnail=144x144"/>
+              <div>服装特惠</div>
+            </a>
           </li>
         </ul>
       </div>
-      <ShopCart/>
     </div>
 
   </div>
@@ -54,7 +154,25 @@
 </template>
 
 <script>
-  export default {}
+  import {mapState} from 'vuex'
+  import BScroll from 'better-scroll'
+  export default {
+    //发送异步请求
+    mounted(){
+      this.$store.dispatch('getFenlei',()=>{
+        this.$nextTick(()=>{
+          new BScroll('.rightList',{
+            click: true , //响应点击
+            scrollY: true //横向滑动
+          })
+        })
+      })
+    },
+
+    computed:{
+      ...mapState(['fenlei'])
+    }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
@@ -79,24 +197,25 @@
       top 60px
       left 201px
       color darkgray
-    bottom-border-1px(#999)
+  bottom-border-1px(rgba(7, 17, 27, 0.1))
   .goods
     display: flex
     position: absolute
-    top: 165px
+    top: 135px
     bottom: 46px
     width: 100%
     background: #fff;
     overflow: hidden
     .menu-wrapper
       flex: 0 0 80px
-      width: 200px
-      background: #f3f5f7
+      width: 500px
+      background:white
+      border 1px solid #eee
       .menu-item
-        display: table
+        display table
         height: 54px
-        width: 56px
-        padding: 0 12px
+        width: 136px
+        padding: 0 18px
         line-height: 14px
         &.current
           position: relative
@@ -107,73 +226,37 @@
           font-weight: 700
           .text
             border-none()
-        .icon
-          display: inline-block
-          vertical-align: top
-          width: 12px
-          height: 12px
-          margin-right: 2px
-          background-size: 12px 12px
-          background-repeat: no-repeat
         .text
           display: table-cell
-          width: 56px
+          width: 70px
+          margin-top 40px
+          padding-top 70px
           vertical-align: middle
-          bottom-border-1px(rgba(7, 17, 27, 0.1))
-          font-size: 12px
-    .foods-wrapper
-      flex: 1
-      .title
-        padding-left: 14px
-        height: 26px
-        line-height: 26px
-        border-left: 2px solid #d9dde1
-        font-size: 12px
-        color: rgb(147, 153, 159)
-        background: #f3f5f7
-      .food-item
-        display: flex
-        margin: 18px
-        padding-bottom: 18px
-        bottom-border-1px(rgba(7, 17, 27, 0.1))
-        &:last-child
-          border-none()
-          margin-bottom: 0
-        .icon
-          flex: 0 0 57px
-          margin-right: 10px
-        .content
-          flex: 1
-          .name
-            margin: 2px 0 8px 0
-            height: 14px
-            line-height: 14px
-            font-size: 14px
-            color: rgb(7, 17, 27)
-          .desc, .extra
-            line-height: 10px
-            font-size: 10px
-            color: rgb(147, 153, 159)
-          .desc
-            line-height: 12px
-            margin-bottom: 8px
-          .extra
-            .count
-              margin-right: 12px
-          .price
-            font-weight: 700
-            line-height: 24px
-            .now
-              margin-right: 8px
-              font-size: 14px
-              color: rgb(240, 20, 20)
-            .old
-              text-decoration: line-through
-              font-size: 10px
-              color: rgb(147, 153, 159)
-          .cartcontrol-wrapper
-            position: absolute
-            right: 0
-            bottom: 12px
+
+          font-size: 28px
+  .rightList
+    border 1px solid #eee
+    .right_ul_lis
+      li
+        width 145px
+        height 145px
+        float left
+        padding 0 10px
+        margin-left 30px
+        margin-top 20px
+        img
+          width 100%
+          height 100%
+        div
+          font-size 12px
+          text-align center
+    .shengdian
+      width 528px
+      height 192px
+      margin 20px 0 0 40px
+      img
+        width 100%
+        height 100%
+
 
 </style>

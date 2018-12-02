@@ -7,6 +7,8 @@ import Categorys from '../pages/Category/Category'
 import DisStance from '../pages/DiscernStance/DiscernStance'
 import ShopCart from '../pages/ShopCart/ShopCart'
 import Personal from '../pages/Personal/Personal'
+import phone_login from '../pages/Login/login_phone'
+import email_login from '../pages/Login/email_login'
 
 import Login from '../pages/Login/Login'
 
@@ -17,33 +19,70 @@ export default new VueRouter({
   routes:[
     {
       path: '/',
-      redirect: '/categorys'
+      redirect: '/categorys',
+      meta:{
+        showFooter: true
+      }
     },
     {
       path: '/homepage',
-      component: HomePage
+      component: HomePage,
+      meta:{
+        showFooter: true
+      }
     },
     {
       path: '/categorys',
-      component: Categorys
+      component: Categorys,
+      meta:{
+        showFooter: true
+      }
     },
     {
       path: '/dstance',
-      component: DisStance
+      component: DisStance,
+      meta:{
+        showFooter: true
+      }
     },
     {
       path: '/shopcart',
-      component: ShopCart
+      component: ShopCart,
+      meta:{
+        showFooter: true
+      }
     },
     {
       path: '/personal',
-      component: Personal
+      component: Personal,
+      meta:{
+        showFooter: true
+      }
     },
 
     {
       path:'/login',
-      component:Login
-    }
+      component:Login,
+      meta:{
+        showFooter: false
+      }
+    },
+
+    {
+      path:'/phoneLogin',
+      component:phone_login,
+      meta:{
+        showFooter: false
+      }
+    },
+    {
+      path:'/emailLogin',
+      component:email_login,
+      meta:{
+        showFooter: false
+      }
+    },
+
 
   ]
 })

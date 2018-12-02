@@ -5,6 +5,9 @@ import './rem'
 import store from './store/store'
 
 import  './mock/mockServer'
+import { Button } from 'mint-ui';
+
+Vue.component(Button.name, Button)
 
 /* eslint-disable no-new */
 new Vue({

@@ -3,7 +3,7 @@
     包含n个方法: 能直接更新state
  */
 
-import {REECIVE_DATA,RECEIVE_BANNER,RECEIVE_HOME,RECEIVE_FENLEI} from './mutations-type'
+import {REECIVE_DATA,RECEIVE_BANNER,RECEIVE_HOME,RECEIVE_FENLEI,RECEIVE_SHIWU} from './mutations-type'
 
 export default {
 
@@ -21,5 +21,9 @@ export default {
 
   [RECEIVE_FENLEI] (state,{fenlei}) {
     state.fenlei = fenlei
+  },
+
+  [RECEIVE_SHIWU] (state,{shiwu}){
+    state.shiwu = shiwu
   }
 }
