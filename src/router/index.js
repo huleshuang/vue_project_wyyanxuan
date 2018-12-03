@@ -7,9 +7,8 @@ import Categorys from '../pages/Category/Category'
 import DisStance from '../pages/DiscernStance/DiscernStance'
 import ShopCart from '../pages/ShopCart/ShopCart'
 import Personal from '../pages/Personal/Personal'
-import phone_login from '../pages/Login/login_phone'
-import email_login from '../pages/Login/email_login'
-
+import phone_login from '../pages/Personal/login_phone'
+import email_login from '../pages/Personal/email_login'
 import Login from '../pages/Login/Login'
 
 //声明使用

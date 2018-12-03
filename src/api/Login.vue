@@ -100,7 +100,7 @@
         }else{ //发送失败
           //停止定时器
           this.computedTime = 0
-         MessageBox.alert(result.msg,'提示')
+          MessageBox.alert(result.msg,'提示')
         }
       },
 
@@ -147,7 +147,6 @@
           if(result.code !=0) {
             this.updateCaptcha()
           }
-
         }
 
         //根据结果做不同的响应

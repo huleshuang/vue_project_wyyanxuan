@@ -16,3 +16,9 @@ export const reqFenlei = () => ajax('/fenlei')
 //获取识物
 export const reqShiwu = () => ajax('/shiwu')
 
+//账号密码图片验证码登录
+export const reqUserLogin = ({name,pwd,captch})=> ajax('/login',{
+  name,
+  pwd,
+  captch
+},'POST')

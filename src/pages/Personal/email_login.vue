@@ -1,33 +1,28 @@
 <template>
   <div class="phone_contanier">
-    <loginTopHeader class="lll"/>
+    <loginTopHeader/>
     <div class="img_div">
       <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png"/>
     </div>
 
     <div class="input_div">
       <div class="idp">
-        <input class="phone" type="text" placeholder="请输入手机号"/>
+        <input class="phone" type="text" placeholder="邮箱账号"/>
       </div>
       <div class="captch">
-        <input class="phone" type="text" placeholder="请输入短信验证码"/>
-        <button>获取验证码</button>
-      </div>
-
-      <div class="pwd">
-        <input class="pws" type="text" placeholder="密码"/>
+        <input class="phone" type="text" placeholder="密码"/>
       </div>
 
       <div class="p_div">
         <div class="problem">
           <a href="javascript:;">
-            遇到问题 ？
+            注册账号
           </a>
         </div>
 
         <div class="pwd">
           <a href="javascript:;">
-            使用密码验证登录
+            忘记密码
           </a>
         </div>
       </div>
@@ -41,13 +36,8 @@
 
     <button class="login_email" @click="$router.replace('/login')">
 
-      <span >其他方式登录</span>
+      <span>其他方式登录</span>
     </button>
-
-    <div class="no_register">
-      <a href="javascript:;">注册账号</a>
-      <i class="iconfont icon-jiantouyou"></i>
-    </div>
 
   </div>
 </template>
@@ -55,11 +45,6 @@
 <script>
   import loginTopHeader from '../../components/loginTopHeader/loginTopHeader'
   export default {
-    data(){
-      return {
-
-      }
-    },
     components:{
       loginTopHeader
     }
@@ -100,7 +85,6 @@
       border-bottom 1px solid #999
       background #fff
       line-height 80px
-
       input
         outline: none;
         &::-webkit-input-placeholder
@@ -122,7 +106,7 @@
     display block
     width 90%
     height 90px
-    margin 200px auto
+    margin 150px auto
     border-radius 4px
     color white
     background  #b4282d
@@ -136,7 +120,7 @@
     display block
     width 90%
     height 90px
-    margin -160px auto
+    margin -130px auto
     border-radius 4px
     color #b4282d
     text-align center
